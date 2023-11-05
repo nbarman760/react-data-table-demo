@@ -1,0 +1,331 @@
+/* styles.css */
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table tbody tr:hover {
+  background-color: brown;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+/* Sorting indicator */
+.sorted:after {
+  content: "\25B2";
+  float: right;
+}
+
+.sorted.desc:after {
+  content: "\25BC";
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.pagination button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+}
+
+/* Search input */
+input[type="text"] {
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .table th,
+  .table td {
+    display: block;
+  }
+
+  .table td {
+    text-align: center;
+  }
+}
+
+/* styles.css */
+
+/* ... (previous styles) ... */
+
+/* Table Tools */
+.table-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.table-tools-right {
+  display: flex;
+  gap: 16px;
+}
+
+.table-tools-right button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.table-tools-right button:hover {
+  background-color: #218838;
+}
+
+/***Search box Design **/
+
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-left: -2px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Search Icon */
+.search-icon {
+  font-size: 20px;
+  margin-right: 8px;
+  color: #007bff;
+  margin: -1px -1px 15px 4px;
+  border: 1px solid #cccccc;
+  padding: 5px;
+  background-color: white;
+  z-index: 9;
+}
+
+/* Table Tools Right (Buttons) */
+.table-tools-right {
+  display: flex;
+  align-items: center;
+}
+
+.download-button,
+.add-row-button,
+.more-actions-button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.download-button:hover,
+.add-row-button:hover,
+.more-actions-button:hover {
+  background-color: #218838;
+}
+
+/* More Actions Dropdown */
+.more-actions {
+  position: relative;
+  display: inline-block;
+}
+
+.more-actions-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.more-actions-button:hover {
+  background-color: #0056b3;
+}
+
+.more-actions-dropdown {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-left: -32px;
+}
+
+.more-actions:hover .more-actions-dropdown,
+.more-actions-button:hover + .more-actions-dropdown {
+  display: block;
+}
+
+.more-actions-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  text-align: left;
+  border: none;
+  background-color: transparent;
+  color: #333;
+}
+
+.more-actions-dropdown button:hover {
+  background-color: #ddd;
+}
+
+button:disabled,
+button[disabled] {
+  cursor: not-allowed;
+}
+
+/****TextBox******************/
+
+.textbox__container {
+  position: relative;
+  width: 100%;
+  margin: 5px;
+}
+
+.outline-text-input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.placeholder-label {
+  position: absolute;
+  top: 9px;
+  left: 7px;
+  pointer-events: none;
+  color: #aaa;
+  transition: top 0.2s, font-size 0.2s;
+}
+
+.outline-text-input:focus {
+  border-color: #007bff;
+}
+
+.outline-text-input:focus + .placeholder-label,
+.outline-text-input:not(:placeholder-shown) + .placeholder-label {
+  top: -10px;
+  background: white;
+  font-size: 12px;
+  color: #007bff;
+}
+
+/**********************Context menu*************************/
+
+.context-menu {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 1000;
+  padding: 5px 0;
+  min-width: 135px;
+}
+
+.context-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.context-menu ul li {
+  padding: 0px;
+  cursor: pointer;
+  padding-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.context-menu ul li:hover {
+  background-color: #f0f0f0;
+}
+
+.context-menu button {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.context-menu button:hover {
+  background-color: #0056b3;
+}
+
+/**********************Context menu end*************************/
+
+#dropdown {
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+  outline: none;
+  cursor: pointer;
+  margin-top: -19px;
+}
+
+/* Style the dropdown options */
+#dropdown option {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Style the dropdown on hover */
+#dropdown:hover {
+  border-color: #3498db;
+  /* Change the color on hover */
+}
+
+/* Style the selected option */
+#dropdown option:checked {
+  background-color: #3498db;
+  color: #fff;
+}
